@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter as Link } from "react-router-dom";
 import styled from "styled-components";
 import UploadGif from "./UploadGif";
 
-const FrontPageson = styled.div`
+const MainPage = styled.div`
   background-color: #1d2c4e;
   height: 100vh;
   width: 100vw;
@@ -35,11 +34,14 @@ const Anchor = styled.a`
 export default class FrontPage extends Component {
   render() {
     return (
-      <FrontPageson>
+      <MainPage>
         <Header>Bota um gif maneiro ai!</Header>
         <UploadGif />
-        <Anchor href="searchgif">google</Anchor>
-      </FrontPageson>
+        <AlternatePath>
+          Ou clica <Anchor href="searchgif">aqui</Anchor> pra procurar algo
+          legal
+        </AlternatePath>
+      </MainPage>
     );
   }
 }
