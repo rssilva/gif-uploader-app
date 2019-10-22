@@ -28,17 +28,12 @@ const SecondaryHeader = styled.h1`
 `;
 
 export default class SearchGif extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
+  state = { value: "" };
 
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ value: e.target.value });
     console.log("Ta escrito: " + e.target.value);
-  }
+  };
 
   render() {
     return (
