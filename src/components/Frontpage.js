@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import UploadGif from "./UploadGif";
+import Random from "./Random";
 
 const MainPage = styled.div`
   background-color: #1d2c4e;
@@ -41,6 +42,7 @@ export default class FrontPage extends Component {
           Ou clica <Anchor href="searchgif">aqui</Anchor> pra procurar algo
           legal
         </AlternatePath>
+        <Random />
       </MainPage>
     );
   }
