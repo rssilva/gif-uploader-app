@@ -26,11 +26,36 @@ const RandomButton = styled.button`
 `;
 
 export default class Random extends Component {
+  state = {
+    embedGif: ""
+  };
+
+  getGif = () => {
+    const axios = require("axios");
+    axios
+      .get("https://api.giphy.com/v1/gifs/random", {
+        params: {
+          api_key: "r6YgnmokUDIs908nP1eRh0QYQ6HyQVBA"
+        }
+      })
+      .then(response => {
+        this.setState({
+          embedGif: response.data.data.embed_url
+        });
+      });
+  };
+
   render() {
     return (
       <RandomComponent>
         <Header>Sem tempo irmão?</Header>
-        <RandomButton>Randomize</RandomButton>
+        <RandomButton onClick={this.getGif}>Randomize</RandomButton>
+        <iframe
+          title="gif"
+          src={this.state.embedGif}
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
       </RandomComponent>
     );
   }
